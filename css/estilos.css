@@ -1,0 +1,305 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-principal: #2563eb;
+    --color-secundario: #16a34a;
+    --color-texto: #222;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: var(--color-texto);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ENCABEZADO */
+
+header {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* MENÚ */
+
+.menu {
+    display: none;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #bbf7d0;
+}
+
+/* BOTÓN HAMBURGUESA */
+
+.hamburguesa {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.hamburguesa span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* MENÚ ABIERTO EN PANTALLAS PEQUEÑAS */
+
+.menu.activo {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-principal);
+    padding: 1rem;
+    z-index: 10;
+}
+
+.menu.activo ul {
+    flex-direction: column;
+}
+
+/* MENÚ EN PANTALLAS GRANDES */
+
+@media (min-width: 991px) {
+    .menu,
+    .menu.activo {
+        display: block;
+        position: static;
+        padding: 0;
+    }
+
+    .menu ul,
+    .menu.activo ul {
+        flex-direction: row;
+    }
+
+    .hamburguesa {
+        display: none;
+    }
+}
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    padding: .6rem 1.2rem;
+    background: var(--color-principal);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* PORTADA */
+
+.portada {
+    padding: 3rem 1rem;
+    text-align: center;
+    background: var(--color-principal);
+    color: #fff;
+}
+
+.portada .boton {
+    background: #fff;
+    color: var(--color-principal);
+}
+
+.portada img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 25px auto 0;
+    border-radius: 8px;
+}
+
+/* TARJETAS */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tarjeta {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.tarjeta:hover {
+    transform: scale(1.02);
+}
+
+.tarjeta img {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+@media (min-width: 701px) {
+    .tarjeta {
+        width: calc(50% - .5rem);
+    }
+}
+
+@media (min-width: 991px) {
+    .tarjeta {
+        width: calc(33.333% - .67rem);
+    }
+}
+
+/* SERVICIOS */
+
+.servicios {
+    padding: 2rem 1rem;
+}
+
+.servicios h2,
+.servicios > p {
+    text-align: center;
+}
+
+/* ACORDEÓN */
+
+.accordion {
+    padding: 2rem 1rem;
+}
+
+.accordion h2 {
+    text-align: center;
+}
+
+.accordion .item {
+    background: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.accordion .titulo {
+    font-weight: bold;
+    color: var(--color-principal);
+}
+
+.accordion .contenido {
+    display: none;
+}
+
+.accordion .item.activo .contenido {
+    display: block;
+}
+
+/* NOSOTROS */
+
+.nosotros {
+    padding: 2rem 1rem;
+}
+
+.nosotros img {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 8px;
+}
+
+/* CONTACTO */
+
+.contacto {
+    padding: 2rem 1rem;
+}
+
+.contacto h1,
+.contacto > p {
+    text-align: center;
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto label,
+.contacto input,
+.contacto textarea,
+.contacto button {
+    font-size: 1.2rem;
+}
+
+#mensajes {
+    color: red;
+    font-weight: bold;
+}
+
+/* PIE DE PÁGINA */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background: #222;
+    color: #fff;
+    text-align: center;
+}
+
+
+/* Mantener el pie de página abajo */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
